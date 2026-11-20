@@ -64,3 +64,12 @@ roots = ["Statements", "Main"]
 [[lean_lib]]
 name = "Challenge"
 roots = ["Challenge"]
+
+# --- Audit-only entrypoints. Do not merge without checking the full closure. ---
+[[lean_lib]]
+name = "AuditRH"
+roots = ["AuditRH"]
+
+[[lean_lib]]
+name = "AuditAll"
+roots = ["AuditAll"]
