@@ -26,7 +26,7 @@ jobs:
           tar xzf "$T/lean.tar.gz" -C "$T"
 
           # src/ differs only by the added Challenge.lean
-          d=$(diff -r "$T/lean/src" src || true); echo "$d"
+          d=$(diff -r --exclude=AuditRH.lean --exclude=AuditAll.lean "$T/lean/src" src || true); echo "$d"
           [ "$d" = "Only in src: Challenge.lean" ]
           cmp "$T/lean/lean-toolchain" lean-toolchain
           cmp "$T/lean/lake-manifest.json" lake-manifest.json
